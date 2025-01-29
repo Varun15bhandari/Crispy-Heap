@@ -1,0 +1,19 @@
+import java.util.*;
+public class Solution {
+    public static int[] Klargest(int[] a, int k, int n) {
+        // Write your code here
+       
+        PriorityQueue<Integer>mini=new PriorityQueue<>();
+        for(int i=0;i<n;i++){
+            mini.add(a[i]);
+            if(mini.size()>k){
+                mini.poll();
+            }
+        }
+     int[] ans=new int[k];
+     for(int i=0;i<k;i++){
+         ans[i]=mini.poll();
+     }
+     return ans;
+    }
+}
